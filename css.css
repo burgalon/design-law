@@ -1,0 +1,100 @@
+/** Globals **/
+table{ border-collapse: collapse !important; margin: 0 auto; width: 100%;}
+ul li {list-style: none;}
+ul {margin: 0;padding: 0;}
+
+.button, input[type=submit], input[type=button], .submit-row input {
+    background: white url(../admin_media/img/admin/nav-bg.gif) bottom repeat-x;
+    padding: 3px;
+    color: black;
+    border: 1px solid #bbb;
+    border-color: #ddd #aaa #aaa #ddd;
+}
+
+.button:active, input[type=submit]:active, input[type=button]:active {
+    background-image: url(../admin_media/img/admin/nav-bg-reverse.gif);
+    background-position: top;
+}
+
+.button.default, input[type=submit].default, .submit-row input.default {
+    border: 2px solid #5b80b2;
+    background: #7CA0C7 url(../admin_media/img/admin/default-bg.gif) bottom repeat-x;
+    font-weight: bold;
+    color: white;
+    float: right;
+}
+
+.button.default:active, input[type=submit].default:active {
+    background-image: url(../img/admin/default-bg-reverse.gif);
+    background-position: top;
+}
+
+/** base.html - navigation **/
+.nav li {display: inline;}
+.nav {font-family: Helvetica,Arial,sans-serif; font-weight: bold; font-size: 140%; }
+.nav a {padding: 0 1em 0 0; text-decoration: none; color: #703333;}
+.nav a:hover {color: #ff3333;}
+
+.nav .first {padding-left: 0;}
+.rtl .nav .first {padding-right: 0;}
+
+.float {float: left;}
+.rtl .float {float: right;}
+
+.active {text-decoration: none; color: black;}
+
+/** base.html - Global Containers **/
+#header h1 {display: inline; float: left;}
+.rtl #header h1 {float: right;}
+
+#navigation {float: right; width: auto; margin-top: 1em;}
+.rtl #navigation {float: left;}
+
+#navigation .home {display: none;}
+#header .logo a {text-decoration:none; font-size: 35px; color: black;}
+#content {background-color: #fff; min-height: 330px; border-top: 4px solid #EAEFF3; padding-top: 1.5em;}
+#footer {text-align:center; background: #fff; direction: ltr;}
+
+/** site/item.html **/
+.item_wrap img {width: 670px;}
+.item-photo {display: block; width: 10px; height: 10px; margin-left: 5px; background: grey; border: 1px solid black; text-indent: -9999px; overflow:hidden; direction: ltr; text-decoration:none; float: left;}
+.rtl .item-photo {float: right;}
+.item-photo.active {background: none;}
+
+/** site/catalogs.inc - Catalogs **/
+.t_hcatalog h2 {display: none;}
+
+.catalog .item-title, #content .catalog .item-tags {color: black; text-decoration: none; display: block; line-height: 2em; height: 2em; font-size: 1.5em; text-transform: capitalize;}
+
+.catalog li {display: block; min-height: 125px; position: relative; margin-right: 10px;}
+.rtl .catalog li {margin-right: 0; margin-left: 10px;}
+
+.item-thumb img{max-width: 125px; max-height: 125px;}
+.item-thumb {float: left; width: 125px; height: 125px; text-align: center; background: #f7f7f7; overflow: hidden;}
+.rtl .item-thumb {float: right;}
+
+#content .catalog {clear: both; margin: 0;}
+.horizontal .item-title, .horizontal .item-tags {width: 125px;}
+.horizontal li {float: left; width: 310px;}
+.rtl .horizontal li {float: right;}
+
+.horizontal .item-title, .horizontal .item-sub-title {float: left; }
+.rtl .horizontal .item-title, .rtl .horizontal .item-sub-title {float: right; }
+
+.listdetails li {clear: left;}
+.rtl .listdetails li {clear: right;}
+
+.rss {display: block; clear: both;}
+.item-sub-title {text-decoration: none; min-height: 4em; color: black;}
+
+.last {margin: 0 !important;}
+
+/** site/home.html **/
+.banner {display: block; width: 310px; height: 310px; text-indent: -1000em;overflow:hidden; direction: ltr;}
+.rtl .banner {background-position: 10px 0;}
+.banner-text {height: 230px; line-height: 310px; vertical-align: middle;}
+
+/** site/contact.html **/
+textarea, input {width: 240px;}
+label {display: block;}
+.icon24 {display: block; width: 24px; height: 24px; overflow:hidden; direction: ltr;}
