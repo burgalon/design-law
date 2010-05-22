@@ -1,0 +1,61 @@
+{% extends pack.base.template %}
+{% load markup %}
+{% block main %}
+	{{ page.dic.text|textile }}
+{% endblock %}
+
+{% block sidebar %}
+	{% if page.files %}
+	<div class="item_wrap">
+		{{ page.files.0.render }}
+	</div>
+	{% ifnotequal page.files|length 1 %}
+	<p class="item-photos">
+		{% for i in page.files %}
+			<a href="{% firstof i.get_file_thumb i.get_file %}" target="photo" rel="{{ forloop.counter }}" class="item-photo">{{ forloop.counter }}</a>
+		{% endfor %}
+		<span class="clear">&nbsp;</span>
+	</p>
+	{% endifnotequal %}
+	{% endif %}
+{% endblock %}
+
+
+{% block beforeBodyEnd %}
+	{{ block.super }}
+	<script type="text/javascript">
+	{% ifnotequal page.files|length 1 %}
+		var item_photo = $('.item-photo');
+		// first - avoid opening new windows if javascript is working
+		item_photo.click(function() {return false;});
+		// wait for dom ready and only then load rest of the photos
+		$(document).ready(function() {
+			// set click events
+			try {
+				var photo_width = $('.item_wrap img').css('width').match(/\d*/)[0]*1;
+			}
+			catch(err) {
+				var photo_width = 670;
+			}
+			var item_wrap_anchor = $('.item_wrap a');
+			item_wrap_anchor.wrap('<div class="item_scroll" />');
+			var item_wrap = $('.item_scroll');
+			// styling
+			item_wrap.css({'overflow': 'hidden', 'width': photo_width, 'direction': 'ltr'});
+			item_wrap_anchor.css({'width': '9999px', 'display':'block'});
+			// load more photos
+			item_photo.each(function(i) {
+				if(i==0) {$(this).addClass('active'); return;}
+				jQuery("<img>").attr("src", $(this).attr('href')).appendTo(item_wrap_anchor);
+			});
+			item_photo.click(function(){
+				item_photo.removeClass('active');
+				$(this).addClass('active');
+				item_wrap.animate({
+					'scrollLeft': photo_width*($(this).attr('rel')-1)
+					}, 'slow');
+			});
+		});
+	{% endifnotequal %}
+	</script>
+{% endblock %}
