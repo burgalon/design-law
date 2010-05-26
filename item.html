@@ -22,11 +22,13 @@
 {% endblock %}
 
 {% block sidebar %}
-	{% ifequal item.mime_type "image/jpeg" %}
+	<div class="item_wrap">
+	{% if next_item and item.is_image %}
 		<a href="{{ next_item.url }}" title="{{ next_item.name }}">{{ item.render }}</a>
 	{% else %}
 		{{item.render}}
-	{% endifequal %}
+	{% endif %}
+	</div>
 {% endblock %}
 
 {% block beforeBodyEnd %}
