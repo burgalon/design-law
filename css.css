@@ -56,6 +56,8 @@ ul {margin: 0;padding: 0; list-style-position: inside;}
 
 /** site/item.html **/
 .item_wrap img {width: 670px;}
+/** site/item.html **/
+.item_wrap img {width: 670px;}
 .item-photo {display: block; width: 10px; height: 10px; margin-left: 5px; background: grey; border: 1px solid black; text-indent: -9999px; overflow:hidden; direction: ltr; text-decoration:none; float: left;}
 .rtl .item-photo {float: right;}
 .item-photo.active {background: none;}
