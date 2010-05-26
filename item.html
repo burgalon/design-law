@@ -24,9 +24,9 @@
 {% block sidebar %}
 	<div class="item_wrap">
 	{% if next_item and item.is_image %}
-		<a href="{{ next_item.url }}" title="{{ next_item.name }}">{{ item.render }}</a>
+		<a class="item-wrap-img" href="{{ next_item.url }}" title="{{ next_item.name }}">{{ item.render }}</a>
 	{% else %}
-		{{item.render}}
+		<span class="item-wrap-img">{{item.render}}</span>
 	{% endif %}
 	</div>
 {% endblock %}
@@ -50,7 +50,7 @@
 			catch(err) {
 				var photo_width = 670;
 			}
-			var item_wrap_anchor = $('.item_wrap a');
+			var item_wrap_anchor = $('.item-wrap-img');
 			item_wrap_anchor.wrap('<div class="item_scroll" />');
 			var item_wrap = $('.item_scroll');
 			// styling
