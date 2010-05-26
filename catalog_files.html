@@ -2,7 +2,7 @@
 {% load markup %}
 {% block main %}
 	<h2>{{page.name}}</h2>
-	{% if items %}
+	{% if pages %}
 	<ul class="catalog">
 		{% for i in pages %}
 		{% if i.files.0 %}
