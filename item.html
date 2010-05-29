@@ -24,7 +24,7 @@
 {% block sidebar %}
 	<div class="item_wrap">
 	{% if next_item and item.is_image %}
-		<a class="item-wrap-img" href="{{ next_item.url }}" title="{{ next_item.name }}">{{ item.render }}</a>
+		<a class="item-wrap-img" href="{{ next_item.url }}">{{ item.render }}</a>
 	{% else %}
 		<span class="item-wrap-img">{{item.render}}</span>
 	{% endif %}
