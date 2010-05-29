@@ -8,7 +8,7 @@
 {% block metaKeywords %}{{ item.tags }}{%endblock %}
 
 {% block main %}
-	<h3 class="product-title">{{item.name|capfirst}}</h3>
+	<h2 class="product-title">{{item.name|capfirst}}</h2>
 	{{ page.dic.description|textile }}
 
 	{% ifnotequal page.files|length 1 %}
