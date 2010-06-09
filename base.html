@@ -3,7 +3,10 @@
 {% block css %}
 	{{ block.super }}
 	<style type="text/css">
-		{% if files.header.get_file %}#header {background: url('{{ files.header.get_file|safe}}') center 0 no-repeat ;}{% endif %}
+		{% if files.header.get_file %}
+			#header {background: url('{{ files.header.get_file|safe}}') center 0 no-repeat ;}
+			#header .logo {display: none;}
+		{% endif %}
 	</style>
 {% endblock %}
 
