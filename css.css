@@ -43,6 +43,7 @@ ul {margin: 0;padding: 0; list-style-position: inside;}
 .active {text-decoration: none; color: black;}
 
 /** base.html - Global Containers **/
+#header {height: 200px;}
 #header h1 {display: inline; float: left;}
 .rtl #header h1 {float: right;}
 
