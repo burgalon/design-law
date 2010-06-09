@@ -30,8 +30,8 @@ ul {margin: 0;padding: 0; list-style-position: inside;}
 
 /** base.html - navigation **/
 .nav li {display: inline;}
-.nav {font-family: Helvetica,Arial,sans-serif; font-weight: bold; font-size: 140%; }
-.nav a {padding: 0 1em 0 0; text-decoration: none; }
+.nav {font-family: Helvetica,Arial,sans-serif; font-weight: bold; }
+.nav a {padding: 0 1em 0 0; text-decoration: none; color: white;}
 .nav a:hover {color: #ff3333;}
 
 .nav .first {padding-left: 0;}
@@ -47,7 +47,7 @@ ul {margin: 0;padding: 0; list-style-position: inside;}
 #header h1 {display: inline; float: left;}
 .rtl #header h1 {float: right;}
 
-#navigation {float: right; width: auto; margin-top: 1em; position: relative;}
+#navigation {float: right; width: auto; margin-top: 65px; position: relative; text-shadow: 1px 2px 2px #000000;}
 .rtl #navigation {float: left;}
 
 #navigation .home {display: none;}
