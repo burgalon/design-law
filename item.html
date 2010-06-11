@@ -11,11 +11,12 @@
 	{% block sidebar %}
 		<div class="item_wrap">
 			{% ifequal item.mime_type "image/jpeg" %}
-				<a href="{{ next_item.url }}" title="{{ next_item.name }}">{{ item.render }}</a>
+				<a href="{{ next_item.url }}">{{ item.render }}</a>
 			{% else %}
 				{{item.render}}
 			{% endifequal %}
 		</div>
+		
 
 		<div class="item_wrap-bottom">
 			{% ifnotequal page.files|length 1 %}

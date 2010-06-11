@@ -3,6 +3,6 @@
 
 {% block sidebar %}
 	{{ block.super }}
-	<h3>{{ pages.0.name }}</h3>
-	{{ pages.0.dic.description|textile }}
+	<h3><a href="{{ pages.0.url }}">{{ pages.0.name }}</a></h3>
+	{{ pages.0.dic.sub_title|textile }}
 {% endblock %}

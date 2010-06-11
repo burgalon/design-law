@@ -4,7 +4,7 @@ table{ border-collapse: collapse !important; margin: 0 auto; width: 100%;}
 ul {margin: 0;padding: 0; list-style-position: inside;}
 h1, h2, h3, h4, h5, h6 {font-family:Arial,Tahoma,Verdana,sans-serif,Georgia; font-weight:bold;}
 h2 {color:#132A3A; text-transform:uppercase; font-size:3em;}
-h3 {color:#4B4B4B; text-transform:uppercase;}
+h3, h3 a {color:#4B4B4B; text-transform:uppercase; text-decoration: none;}
 
 .button, input[type=submit], input[type=button], .submit-row input {
     background: white url(../admin_media/img/admin/nav-bg.gif) bottom repeat-x;
@@ -78,21 +78,19 @@ h3 {color:#4B4B4B; text-transform:uppercase;}
 .item-photo {display: block; width: 10px; height: 10px; margin-left: 5px; background: grey; border: 1px solid black; text-indent: -9999px; overflow:hidden; direction: ltr; text-decoration:none; float: left;}
 .rtl .item-photo {float: right;}
 .item-photo.active {background: none;}
-h1
+
 /** site/catalogs.inc - Catalogs **/
-.t_hcatalog h2 {display: none;}
+.catalog .item-title {color: #4B4B4B; text-decoration: none; display: block; line-height: 2em; height: 2em; font-size: 1.5em; font-weight: bold; text-transform: capitalize;}
 
-.catalog .item-title, #content .catalog .item-tags {color: black; text-decoration: none; display: block; line-height: 2em; height: 2em; font-size: 1.5em; text-transform: capitalize;}
-
-.catalog-item {display: block; min-height: 125px; position: relative; margin-right: 10px;}
+.catalog-item {display: block; min-height: 125px; position: relative; margin-right: 10px; padding-bottom: 1em;}
 .rtl .catalog-item {margin-right: 0; margin-left: 10px;}
 
 .item-thumb img{max-width: 125px; max-height: 125px;}
 .item-thumb {float: left; width: 125px; height: 125px; text-align: center; background: #f7f7f7; overflow: hidden;}
 .rtl .item-thumb {float: right;}
 
-#content .catalog {clear: both; margin: 0;}
-.horizontal .item-title, .horizontal .item-tags {width: 125px;}
+.catalog {clear: both; margin: 0;}
+.horizontal .item-title, .horizontal .item-sub-title {width: 292px; margin-left: 10px;}
 .horizontal .catalog-item {float: left; width: 450px;}
 .rtl .horizontal .catalog-item {float: right;}
 
@@ -100,7 +98,7 @@ h1
 .rtl .horizontal .item-title, .rtl .horizontal .item-sub-title {float: right; }
 
 .rss {display: none;}
-.item-sub-title {text-decoration: none; min-height: 4em; color: black;}
+.item-sub-title {text-decoration: none; min-height: 4em; color: #666;}
 
 .last {margin: 0 !important;}
 
