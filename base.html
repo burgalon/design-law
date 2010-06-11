@@ -1,17 +1,124 @@
 {% extends "site/base.html" %}
+{% load utils %}
+{% load markup %}
 
 {% block css %}
 	{{ block.super }}
 	<style type="text/css">
 		{% if files.header.get_file %}
-			#header {background: url('{{ files.header.get_file|safe}}') center 0 no-repeat ;}
-			#header .logo {display: none;}
+			#header {background: url('{{ files.header.get_file|safe}}') center 0 no-repeat #132A3A;}
+			.logo a span {display: none;}
 		{% endif %}
 	</style>
 {% endblock %}
 
-{% block sidebar %}
-	{% for file in page.files %}
-		{{ file.render }}
-	{% endfor %}
+{% block body %}
+<div id="header">
+	<div class="slogan-background">&nbsp;</div>
+</div>
+<div class="container">
+	<h1 class="logo">
+	{% block logo %}
+		<a href="{{ portfolio.url }}" title="{{ dic.moto }}">
+			<span>{{  portfolio.title }}</span>
+		</a>
+	{% endblock %}
+	</h1>
+	<div id="navigation" class="nav span-24">
+		{% block nav %}
+			{% nav_list nav request.META.PATH_INFO ""%}
+		{% endblock %}
+	</div>
+	<div class="slogan">{{ dic.moto }}</div>
+	<div id="content" class="span-24">
+		{% block content %}
+			<div id="main" class="span-10 prepend-top">
+			{% block main %}
+				<h2>{{item.name|capfirst}}</h2>
+				{{ page.dic.description|textile }}
+			{% endblock %}
+			</div>
+			<div id="sidebar" class="span-13 prepend-top last">
+			{% block sidebar %}
+				<div class="item_wrap">
+					{% ifequal item.mime_type "image/jpeg" %}
+						<a href="{{ next_item.url }}" title="{{ next_item.name }}">{{ item.render }}</a>
+					{% else %}
+						{{item.render}}
+					{% endifequal %}
+				</div>
+
+				<div class="item_wrap-bottom">
+					{% ifnotequal page.files|length 1 %}
+					<p class="item-photos">
+						{% for i in page.files %}
+							<a href="{% firstof i.get_file_thumb i.get_file %}" target="photo" rel="{{ forloop.counter }}" class="item-photo">{{ forloop.counter }}</a>
+						{% endfor %}
+						<span class="clear">&nbsp;</span>
+					</p>
+					{% endifnotequal %}
+				</div>
+			{% endblock %}
+			</div>
+		{% endblock %}
+	</div>
+	<div id="footer" class="span-24">
+		{% block footer %}
+			<div id="footer-portfolio">
+				{% block footer_portfolio %}
+				Copyright &#169;  2010 <a href="{{ portfolio.url }}">{{ portfolio.title }}</a>  - All rights reserved.
+				{% endblock %}
+			</div>
+			<div id="footer-powered">
+				<a title="{{ site_excerpt }}" href="http://{{ site.domain }}">{{ site.name }}</a> {{ site_excerpt }}
+				| <a rel="nofollow" href="http://{{ site.domain }}{{ page.get_absolute_url}}">DashBoard</a>
+				{% if last_portfolio %}
+				| Last portfolio viewed &lrm;<a href="{{ last_portfolio.url }}">{{ last_portfolio.title }}</a>
+				{% endif %}
+			</div>
+		{% endblock %}
+	</div>
+</div>
+{% endblock %}
+
+{% block beforeBodyEnd %}
+	{{ block.super }}
+	<script type="text/javascript">
+	if($('.business-email').length) {
+		$('.business-email').val($('#business-email-wrap a').attr('href').replace('mailto:',''));
+	}
+	{% ifnotequal page.files|length 1 %}
+		var item_photo = $('.item-photo');
+		// first - avoid opening new windows if javascript is working
+		item_photo.click(function() {return false;});
+		// wait for dom ready and only then load rest of the photos
+		$(document).ready(function() {
+			// set click events
+			try {
+				var photo_width = $('.item_wrap img').css('width').match(/\d*/)[0]*1;
+			}
+			catch(err) {
+				var photo_width = 670;
+			}
+			var item_wrap_anchor = $('.item_wrap a');
+			item_wrap_anchor.wrap('<div class="item_scroll" />');
+			var item_wrap = $('.item_scroll');
+			// styling
+			item_wrap.css({'overflow': 'hidden', 'width': photo_width, 'direction': 'ltr'});
+			item_wrap_anchor.css({'width': '9999px', 'display':'block'});
+			// load more photos
+			item_photo.each(function(i) {
+				if(i==0) {$(this).addClass('active'); return;}
+				jQuery("<img>").attr("src", $(this).attr('href')).appendTo(item_wrap_anchor);
+			});
+			item_photo.click(function(){
+				item_photo.removeClass('active');
+				$(this).addClass('active');
+				item_wrap.animate({
+					'scrollLeft': photo_width*($(this).attr('rel')-1)
+					}, 'slow');
+			});
+		});
+	{% endifnotequal %}
+	</script>
 {% endblock %}

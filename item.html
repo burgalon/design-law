@@ -5,70 +5,35 @@
 {% block bodyClass %}{{ block.super }} page_{{ page.template }}{% for t in page.pages %} page_{{t.slug_name}}{% endfor %}{% endblock %}
 {% block title %}{{ item }} | {{  portfolio.title }}{% endblock %}
 {% block metaDescription %}{% firstof page.dic.sub_title item.name %}{%endblock %}
-{% block metaKeywords %}{{ item.tags }}{%endblock %}
 
-{% block main %}
-	<h2 class="product-title">{{item.name|capfirst}}</h2>
-	{{ page.dic.description|textile }}
+{% block content %}
+	<div id="sidebar" class="span-10 prepend-top last">
+	{% block sidebar %}
+		<div class="item_wrap">
+			{% ifequal item.mime_type "image/jpeg" %}
+				<a href="{{ next_item.url }}" title="{{ next_item.name }}">{{ item.render }}</a>
+			{% else %}
+				{{item.render}}
+			{% endifequal %}
+		</div>
 
-	{% ifnotequal page.files|length 1 %}
-	<p class="item-photos">
-		{% for i in page.files %}
-			<a href="{% firstof i.get_file_thumb i.get_file %}" target="photo" rel="{{ forloop.counter }}" class="item-photo">{{ forloop.counter }}</a>
-		{% endfor %}
-		<span class="clear">&nbsp;</span>
-	</p>
-	{% endifnotequal %}
-{% endblock %}
-
-{% block sidebar %}
-	<div class="item_wrap">
-	{% if next_item and item.is_image %}
-		<a class="item-wrap-img" href="{{ next_item.url }}">{{ item.render }}</a>
-	{% else %}
-		<span class="item-wrap-img">{{item.render}}</span>
-	{% endif %}
+		<div class="item_wrap-bottom">
+			{% ifnotequal page.files|length 1 %}
+			<p class="item-photos">
+				{% for i in page.files %}
+					<a href="{% firstof i.get_file_thumb i.get_file %}" target="photo" rel="{{ forloop.counter }}" class="item-photo">{{ forloop.counter }}</a>
+				{% endfor %}
+				<span class="clear">&nbsp;</span>
+			</p>
+			{% endifnotequal %}
+		</div>
+	{% endblock %}
 	</div>
-{% endblock %}
 
-{% block beforeBodyEnd %}
-	{{ block.super }}
-	<script type="text/javascript">
-	if($('.business-email').length) {
-		$('.business-email').val($('#business-email-wrap a').attr('href').replace('mailto:',''));
-	}
-	var item_photo = $('.item-photo');
-	{% ifnotequal page.files|length 1 %}
-		// first - avoid opening new windows if javascript is working
-		item_photo.click(function() {return false;});
-		// wait for dom ready and only then load rest of the photos
-		$(document).ready(function() {
-			// set click events
-			try {
-				var photo_width = $('.item_wrap img').css('width').match(/\d*/)[0]*1;
-			}
-			catch(err) {
-				var photo_width = 390;
-			}
-			var item_wrap_anchor = $('.item-wrap-img');
-			item_wrap_anchor.wrap('<div class="item_scroll" />');
-			var item_wrap = $('.item_scroll');
-			// styling
-			item_wrap.css({'overflow': 'hidden', 'width': photo_width, 'direction': 'ltr'});
-			item_wrap_anchor.css({'width': '9999px', 'display':'block'});
-			// load more photos
-			item_photo.each(function(i) {
-				if(i==0) {$(this).addClass('active'); return;}
-				jQuery("<img>").attr("src", $(this).attr('href')).appendTo(item_wrap_anchor);
-			});
-			item_photo.click(function(){
-				item_photo.removeClass('active');
-				$(this).addClass('active');
-				item_wrap.animate({
-					'scrollLeft': photo_width*($(this).attr('rel')-1)
-					}, 'slow');
-			});
-		});
-	{% endifnotequal %}
-	</script>
+	<div id="main" class="span-13 prepend-top">
+	{% block main %}
+		<h2>{{item.name|capfirst}}</h2>
+		{{ page.dic.description|textile }}
+	{% endblock %}
+	</div>
 {% endblock %}

@@ -1,0 +1,8 @@
+{% extends pack.base.template %}
+{% load markup %}
+
+{% block sidebar %}
+	{{ block.super }}
+	<h3>{{ pages.0.name }}</h3>
+	{{ pages.0.dic.description|textile }}
+{% endblock %}

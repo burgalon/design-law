@@ -1,6 +1,10 @@
 /** Globals **/
+body {color:#666;}
 table{ border-collapse: collapse !important; margin: 0 auto; width: 100%;}
 ul {margin: 0;padding: 0; list-style-position: inside;}
+h1, h2, h3, h4, h5, h6 {font-family:Arial,Tahoma,Verdana,sans-serif,Georgia; font-weight:bold;}
+h2 {color:#132A3A; text-transform:uppercase; font-size:3em;}
+h3 {color:#4B4B4B; text-transform:uppercase;}
 
 .button, input[type=submit], input[type=button], .submit-row input {
     background: white url(../admin_media/img/admin/nav-bg.gif) bottom repeat-x;
@@ -29,10 +33,11 @@ ul {margin: 0;padding: 0; list-style-position: inside;}
 }
 
 /** base.html - navigation **/
+#container {position: relative; top: 0;}
+
 .nav li {display: inline;}
 .nav {font-family: Helvetica,Arial,sans-serif; font-weight: bold; }
 .nav a {padding: 0 1em 0 0; text-decoration: none; color: white;}
-.nav a:hover {color: #ff3333;}
 
 .nav .first {padding-left: 0;}
 .rtl .nav .first {padding-right: 0;}
@@ -43,26 +48,37 @@ ul {margin: 0;padding: 0; list-style-position: inside;}
 .active {text-decoration: none; color: black;}
 
 /** base.html - Global Containers **/
-#header {height: 200px; width: 950px; position: absolute;}
-#header h1 {display: inline; float: left;}
-.rtl #header h1 {float: right;}
+#header {height: 200px; margin: 0 auto; position: relative;}
+#header h1 {margin: 0;}
+#header h1 a {width: 350px; height: 150px; display: block;}
+#header h1 a span {display: none;}
+#header .slogan-background {position: relative; top: 150px; background: #000; opacity: 0.3; width: 100%; height: 50px;}
+.slogan {height: 50px; line-height: 50px; position: absolute; top: 153px; color: white; text-transform:uppercase; letter-spacing:-0.07em; font-style:italic; font-size:1.2em;}
 
-#navigation {float: right; width: auto; margin-top: 65px; position: relative; text-shadow: 1px 2px 2px #000000;}
+
+#navigation {float: right; width: auto; position: relative; top: -133px; text-shadow: 1px 2px 2px #000000;}
 .rtl #navigation {float: left;}
-
 #navigation .home {display: none;}
-#header .logo a {text-decoration:none; font-size: 35px; color: black;}
-#content {background-color: #fff; min-height: 330px; border-top: 4px solid #EAEFF3; padding-top: 1.5em;}
-#footer {text-align:center; background: #fff; direction: ltr;}
+
+.logo a {text-decoration:none; font-size: 35px; color: black; position: absolute; top: 0; height: 150px; width: 400px; }
+
+/*TODO: BUG with 950px causes overflow*/
+#content {background-color: #fff; min-height: 330px; width: 951px;}
+#content h1 {color: #132A3A;}
+
+#footer {direction: ltr; border-top:1px solid #D5D5D5; line-height:160%; padding:10px 0; margin-top: 50px;}
+#footer a {color: #132A3A;}
+#footer a:hover {color: #387093;}
 
 /** site/item.html **/
-.item_wrap img {width: 390px;}
-/** site/item.html **/
-.item_wrap img {width: 390px;}
+.item-thumb, .item_wrap {background: #FFF; border:1px solid #D7D7D7; overflow:hidden; padding:10px; width:300px; z-index:200;}
+.t_home .item_wrap {margin-top:-115px; position:absolute; width:528px; }
+.t_home .item_wrap-bottom {margin-top: 275px;}
+
 .item-photo {display: block; width: 10px; height: 10px; margin-left: 5px; background: grey; border: 1px solid black; text-indent: -9999px; overflow:hidden; direction: ltr; text-decoration:none; float: left;}
 .rtl .item-photo {float: right;}
 .item-photo.active {background: none;}
-
+h1
 /** site/catalogs.inc - Catalogs **/
 .t_hcatalog h2 {display: none;}
 
@@ -77,13 +93,13 @@ ul {margin: 0;padding: 0; list-style-position: inside;}
 
 #content .catalog {clear: both; margin: 0;}
 .horizontal .item-title, .horizontal .item-tags {width: 125px;}
-.horizontal .catalog-item {float: left; width: 310px;}
+.horizontal .catalog-item {float: left; width: 450px;}
 .rtl .horizontal .catalog-item {float: right;}
 
 .horizontal .item-title, .horizontal .item-sub-title {float: left; }
 .rtl .horizontal .item-title, .rtl .horizontal .item-sub-title {float: right; }
 
-.rss {display: block; clear: both;}
+.rss {display: none;}
 .item-sub-title {text-decoration: none; min-height: 4em; color: black;}
 
 .last {margin: 0 !important;}
