@@ -65,7 +65,9 @@ h3, h3 a {color:#4B4B4B; text-transform:uppercase; text-decoration: none;}
 /*TODO: BUG with 950px causes overflow*/
 #content {background-color: #fff; min-height: 330px; width: 951px;}
 #content h1 {color: #132A3A;}
+
 #content #main p {margin: 0 2.5em 1.5em 0;}
+.rtl #content #main p {margin: 0 0 1.5em 2.5em ;}
 
 #footer {direction: ltr; border-top:1px solid #D5D5D5; line-height:160%; padding:10px 0; margin-top: 50px; text-align: center;}
 #footer a {color: #132A3A;}
