@@ -1,4 +1,4 @@
-{% extends pack.base.template %}
+﻿{% extends pack.base.template %}
 {% load utils %}
 
 {% block content %}
@@ -17,25 +17,25 @@
 	{% endif %}
 	{%if form %}
 		<form method="post" action=".">
-			<p><label for="id_name">��:</label> {{ form.neme }}</p>
-			<p><label for="id_email">������:</label> {{ form.email }}</p>
-			<p><label for="id_body">�����:</label> {{ form.body }}</p>
+			<p><label for="id_name">שם:</label> {{ form.neme }}</p>
+			<p><label for="id_email">אימייל:</label> {{ form.email }}</p>
+			<p><label for="id_body">הודעה:</label> {{ form.body }}</p>
 			{{ form.subject }}
-			<input type="submit" class="submit" value="���" />
+			<input type="submit" class="submit" value="שלח" />
 		</form>
 	{%endif%}
 </div>
 <div class="span-7 last">
-	<h3>Email</h3>
+	<h3>אימייל</h3>
 	<p>{{  portfolio.dic.email|obfuscate }}</p>
 
-	<h3>Telephone</h3>
+	<h3>טלפון</h3>
 	<p>{{  portfolio.dic.telephone }}</p>
 
-	<h3>Fax</h3>
+	<h3>פקס</h3>
 	<p>{{  portfolio.dic.fax }}</p>
 
-	<h3>Location</h3>
+	<h3>מיקום</h3>
 	<p>{{  portfolio.dic.location }}</p>
 </div>
 {% endblock %}
