@@ -92,10 +92,10 @@
 		// first - avoid opening new windows if javascript is working
 		item_photo.click(function() {return false;});
 		// wait for dom ready and only then load rest of the photos
-		$('.item_wrap img').load(function() {
+		$(document).load(function() {
 			// set click events
 			try {
-				var photo_width = $('.item_wrap img').css('width').match(/\d*/)[0]*1;
+				var photo_width = $('.item_wrap img').css('width').match(/\d*/)[0]*1 || $('.item_wrap img').parent().css('width').match(/\d*/)[0]*1 || 670;
 			}
 			catch(err) {
 				var photo_width = 670;
