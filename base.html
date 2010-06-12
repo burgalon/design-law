@@ -42,7 +42,7 @@
 			{% block sidebar %}
 				<div class="item_wrap">
 					{% ifequal item.mime_type "image/jpeg" %}
-						<a href="{{ next_item.url }}" title="{{ next_item.name }}">{{ item.render }}</a>
+						<a href="{% firstof next_item.url portfolio.pages_navigation.1.url %}" title="{{ next_item.name }}">{{ item.render }}</a>
 					{% else %}
 						{{item.render}}
 					{% endifequal %}
