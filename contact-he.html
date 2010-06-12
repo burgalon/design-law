@@ -1,0 +1,41 @@
+{% extends pack.base.template %}
+{% load utils %}
+
+{% block content %}
+<div class="span-7 colborder">
+	<h2>{{ page.name }}</h2>
+	{% for file in page.files %}
+		{{ file.render }}
+	{% endfor %}
+	{{ page.dic.description }}
+</div>
+<div class="span-8 colborder">
+	{% if message %}
+		<div class="notice">
+			{{message|linebreaks}}
+		</div>
+	{% endif %}
+	{%if form %}
+		<form method="post" action=".">
+			<p><label for="id_name">שם:</label> {{ form.neme }}</p>
+			<p><label for="id_email">אימייל:</label> {{ form.email }}</p>
+			<p><label for="id_body">הודעה:</label> {{ form.body }}</p>
+			{{ form.subject }}
+			<input type="submit" class="submit" value="שלח" />
+		</form>
+	{%endif%}
+</div>
+<div class="span-7 last">
+	<h3>Email</h3>
+	<p>{{  portfolio.dic.email|obfuscate }}</p>
+
+	<h3>Telephone</h3>
+	<p>{{  portfolio.dic.telephone }}</p>
+
+	<h3>Fax</h3>
+	<p>{{  portfolio.dic.fax }}</p>
+
+	<h3>Location</h3>
+	<p>{{  portfolio.dic.location }}</p>
+</div>
+{% endblock %}
