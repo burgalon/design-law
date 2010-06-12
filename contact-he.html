@@ -1,4 +1,4 @@
-﻿{% extends pack.base.template %}
+{% extends pack.base.template %}
 {% load utils %}
 
 {% block content %}
@@ -17,7 +17,7 @@
 	{% endif %}
 	{%if form %}
 		<form method="post" action=".">
-			<p><label for="id_name">שם:</label> {{ form.neme }}</p>
+			<p><label for="id_name">שם:</label> {{ form.name }}</p>
 			<p><label for="id_email">אימייל:</label> {{ form.email }}</p>
 			<p><label for="id_body">הודעה:</label> {{ form.body }}</p>
 			{{ form.subject }}
