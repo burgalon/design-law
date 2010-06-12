@@ -92,7 +92,10 @@ h3, h3 a {color:#4B4B4B; text-transform:uppercase; text-decoration: none;}
 .rtl .item-thumb {float: right;}
 
 .catalog {clear: both; margin: 0;}
+
 .horizontal .item-title, .horizontal .item-sub-title {width: 292px; margin-left: 10px;}
+.rtl .horizontal .item-title, .rtl .horizontal .item-sub-title {margin-left: 0; margin-right: 10px;}
+
 .horizontal .catalog-item {float: left; width: 450px;}
 .rtl .horizontal .catalog-item {float: right;}
 
