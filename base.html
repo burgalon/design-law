@@ -32,13 +32,13 @@
 	<div class="slogan">{{ dic.moto }}</div>
 	<div id="content" class="span-24">
 		{% block content %}
-			<div id="main" class="span-10 prepend-top">
+			<div id="main" class="span-10">
 			{% block main %}
 				<h2>{{item.name|capfirst}}</h2>
 				{{ page.dic.description|textile }}
 			{% endblock %}
 			</div>
-			<div id="sidebar" class="span-13 prepend-top last">
+			<div id="sidebar" class="span-13 last">
 			{% block sidebar %}
 				<div class="item_wrap">
 					{% ifequal item.mime_type "image/jpeg" %}
