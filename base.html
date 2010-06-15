@@ -96,6 +96,9 @@
 			// set click events
 			try {
 				var photo_width = $('.item_wrap img').css('width').match(/\d*/)[0]*1 || $('.item_wrap img').parent().css('width').match(/\d*/)[0]*1 || 670;
+				console.log('item wrap img', $('.item_wrap img').css('width').match(/\d*/)[0]*1);
+				console.log('item wrap img parent',  $('.item_wrap img').parent().css('width').match(/\d*/)[0]*1);
+				console.log('item wrap ',  $('.item_wrap').css('width').match(/\d*/)[0]*1)
 			}
 			catch(err) {
 				var photo_width = 670;
