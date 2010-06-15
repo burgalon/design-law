@@ -61,7 +61,7 @@ h3, h3 a {color:#4B4B4B; text-transform:uppercase; text-decoration: none;}
 .logo a {text-decoration:none; font-size: 35px; color: black; position: relative; display: block; top: -200px; height: 150px; width: 400px; }
 
 /*TODO: BUG with 950px causes overflow*/
-#content {background-color: #fff; min-height: 330px; width: 951px;}
+#content {background-color: #fff; min-height: 330px; width: 951px; margin-top: 20px;}
 #content h1 {color: #132A3A;}
 
 #content #main p {margin: 0 2.5em 1.5em 0;}
@@ -74,7 +74,7 @@ h3, h3 a {color:#4B4B4B; text-transform:uppercase; text-decoration: none;}
 /** site/item.html **/
 .item-thumb, .item_wrap {background: #FFF; border:1px solid #D7D7D7; overflow:hidden; padding:10px; width:300px; z-index:200;}
 .item_wrap-bottom {margin-top: 30px;}
-.t_home .item_wrap {margin-top:-115px; position:relative; width:528px; }
+.t_home .item_wrap {margin-top:-135px; position:relative; width:528px; }
 .t_home .item_wrap img {width:528px; height: 346px;}
 
 .item-photo {display: block; width: 10px; height: 10px; margin-left: 5px; background: grey; border: 1px solid black; text-indent: -9999px; overflow:hidden; direction: ltr; text-decoration:none; float: left;}
