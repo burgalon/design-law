@@ -73,9 +73,8 @@ h3, h3 a {color:#4B4B4B; text-transform:uppercase; text-decoration: none;}
 /** site/item.html **/
 .item-thumb, .item_wrap {background: #FFF; border:1px solid #D7D7D7; overflow:hidden; padding:10px; width:300px; z-index:200;}
 .item_wrap-bottom {margin-top: 30px;}
-.t_home .item_wrap {margin-top:-115px; position:absolute; width:528px; }
+.t_home .item_wrap {margin-top:-115px; position:relative; width:528px; }
 .t_home .item_wrap img {width:528px; height: 346px;}
-.t_home .item_wrap-bottom {margin-top: 275px;}
 
 .item-photo {display: block; width: 10px; height: 10px; margin-left: 5px; background: grey; border: 1px solid black; text-indent: -9999px; overflow:hidden; direction: ltr; text-decoration:none; float: left;}
 .rtl .item-photo {float: right;}
