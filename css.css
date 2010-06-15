@@ -58,7 +58,7 @@ h3, h3 a {color:#4B4B4B; text-transform:uppercase; text-decoration: none;}
 .rtl #navigation {float: left;}
 #navigation .home {display: none;}
 
-.logo a {text-decoration:none; font-size: 35px; color: black; position: absolute; top: 0; height: 150px; width: 400px; }
+.logo a {text-decoration:none; font-size: 35px; color: black; position: relative; display: block; top: -200px; height: 150px; width: 400px; }
 
 /*TODO: BUG with 950px causes overflow*/
 #content {background-color: #fff; min-height: 330px; width: 951px;}
