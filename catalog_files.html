@@ -2,7 +2,7 @@
 {% load markup %}
 {% block content %}
 	<h2>{{page.name}}</h2>
-	{% if page.dic.text %}{{ page.dic.text|textile }}{% endif %}
+	{% if page.dic.description %}{{ page.dic.description|textile }}{% endif %}
 	{% if pages %}
 	<ul class="catalog horizontal">
 		{% for i in pages %}
