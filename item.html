@@ -27,8 +27,8 @@
 				<span class="clear">&nbsp;</span>
 			</p>
 			{% endifnotequal %}
-			{% if page.dic.email %}<p>Email: {{ page.dic.email|obfuscate }}</p>{% endif %}
-			{% if page.dic.telephone %}<p>Telephone: {{ page.dic.telephone }}</p>{% endif %}
+			{% if page.dic.email %}<p>{% if dic.rtl %}אימייל{% else %}Email{% endif %}: {{ page.dic.email|obfuscate }}</p>{% endif %}
+			{% if page.dic.telephone %}<p>{% if dic.rtl %}טלפון{% else %}Telephone{% endif %}: {{ page.dic.telephone }}</p>{% endif %}
 		</div>
 	{% endblock %}
 	</div>
