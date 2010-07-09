@@ -82,18 +82,18 @@ h3, h3 a {color:#4B4B4B; text-transform:uppercase; text-decoration: none;}
 .item-photo.active {background: none;}
 
 /** site/catalogs.inc - Catalogs **/
-.catalog .item-title {color: #4B4B4B; text-decoration: none; display: block; line-height: 2em; height: 2em; font-size: 1.5em; font-weight: bold; text-transform: capitalize;}
+.catalog .item-title {color: #4B4B4B; text-decoration: none; display: block; line-height: 2em; height: 2em; font-size: 1.5em; font-weight: bold; text-transform: capitalize; margin-top: 16px;}
 
-.catalog-item {display: block; min-height: 125px; position: relative; margin-right: 10px; padding-bottom: 1em;}
+.catalog-item {display: block; min-height: 125px; position: relative; margin-right: 10px; margin-bottom: 1em; background: #ccc;}
 .rtl .catalog-item {margin-right: 0; margin-left: 10px;}
 
-.item-thumb img{max-width: 125px; max-height: 125px;}
+.item-thumb img{max-width: 125px; max-height: 125px; margin: 10px;}
 .item-thumb {float: left; width: 125px; height: 125px; text-align: center; background: #f7f7f7; overflow: hidden;}
 .rtl .item-thumb {float: right;}
 
 .catalog {clear: both; margin: 0;}
 
-.horizontal .item-title, .horizontal .item-sub-title {width: 292px; margin-left: 10px;}
+.horizontal .item-title, .horizontal .item-sub-title {width: 272px; margin-left: 10px;}
 .rtl .horizontal .item-title, .rtl .horizontal .item-sub-title {margin-left: 0; margin-right: 10px;}
 
 .horizontal .catalog-item {float: left; width: 450px;}
