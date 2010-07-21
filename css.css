@@ -88,7 +88,7 @@ h3, h3 a {color:#4B4B4B; text-transform:uppercase; text-decoration: none;}
 .rtl .catalog-item {margin-right: 0; margin-left: 10px;}
 
 .item-thumb img{max-width: 125px; max-height: 125px;}
-.item-thumb {float: left; width: 125px; height: 125px; text-align: center; background: #f7f7f7; overflow: hidden; margin: 10px;}
+.item-thumb {float: left; width: 125px; height: 125px; text-align: center; background: #f7f7f7; overflow: hidden; }
 .rtl .item-thumb {float: right;}
 
 .catalog {clear: both; margin: 0;}
@@ -96,7 +96,7 @@ h3, h3 a {color:#4B4B4B; text-transform:uppercase; text-decoration: none;}
 .horizontal .item-title, .horizontal .item-sub-title {width: 272px; margin-left: 10px;}
 .rtl .horizontal .item-title, .rtl .horizontal .item-sub-title {margin-left: 0; margin-right: 10px;}
 
-.horizontal .catalog-item {float: left; width: 450px;}
+.horizontal .catalog-item {float: left; width: 430px; padding: 10px;}
 .rtl .horizontal .catalog-item {float: right;}
 
 .horizontal .item-title, .horizontal .item-sub-title {float: left; }
