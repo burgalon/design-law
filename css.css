@@ -84,7 +84,7 @@ h3, h3 a {color:#4B4B4B; text-transform:uppercase; text-decoration: none;}
 /** site/catalogs.inc - Catalogs **/
 .catalog .item-title {color: #4B4B4B; text-decoration: none; display: block; font-size: 1.5em; font-weight: bold; text-transform: capitalize;}
 
-.catalog-item {display: block; min-height: 125px; position: relative; margin-right: 10px; margin-bottom: 10em; background: #ccc;}
+.catalog-item {display: block; min-height: 125px; position: relative; margin-right: 10px; margin-bottom: 1em; background: #ccc;}
 .rtl .catalog-item {margin-right: 0; margin-left: 10px;}
 
 .item-thumb img{max-width: 125px; max-height: 125px;}
