@@ -108,7 +108,7 @@ h3, h3 a {color:#4B4B4B; text-transform:uppercase; text-decoration: none;}
 .last {margin: 0 !important;}
 
 /** site/catalogs_no_photos **/
-.t_catalog_no_photos .catalog-item {padding: 0; min-height: 54px;}
+.t_catalog_no_photos .catalog-item {padding: 0; min-height: 54px; background: #EFF5F9; width: 227px;}
 .t_catalog_no_photos .catalog-item {margin-bottom: 10px;}
 .t_catalog_no_photos .item-thumb {display: none;}
 

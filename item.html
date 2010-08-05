@@ -7,7 +7,7 @@
 {% block metaDescription %}{% firstof page.dic.sub_title item.name %}{%endblock %}
 
 {% block content %}
-	<div id="sidebar" class="span-7 prepend-top last">
+	<div id="sidebar" class="span-7 prepend-top">
 	{% block sidebar %}
 		<div class="item_wrap">
 			{% ifequal item.mime_type "image/jpeg" %}
