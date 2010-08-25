@@ -6,7 +6,7 @@
 	{{ block.super }}
 	<style type="text/css">
 		{% if files.header.get_file %}
-			#header {background: url('{{ files.header.get_file|safe}}') center 0 no-repeat #132A3A;}
+			#header {background: #132A3A url('{{ files.header.get_file|safe}}') center 0 no-repeat;}
 			.logo a span {display: none;}
 		{% endif %}
 	</style>
