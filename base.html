@@ -8,6 +8,8 @@
 		{% if files.header.get_file %}
 			#header {background: #132A3A url('{{ files.header.get_file|safe}}') center 0 no-repeat;}
 			.logo a span {display: none;}
+		{% else %}
+        #header {background: #132A3A;}
 		{% endif %}
 	</style>
 {% endblock %}
