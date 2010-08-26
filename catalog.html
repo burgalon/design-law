@@ -3,7 +3,6 @@
 {% block content %}
     <div id="main" class="span-12">
     {% block main %}
-        <h2>{{page.name}}</h2>
         {% if items %}
         <ul class="catalog horizontal">
             {% for i in items %}
@@ -22,6 +21,7 @@
     </div>
     <div id="sidebar" class="span-12 last">
     {% block sidebar %}
+        <h2>{{page.name}}</h2>
         {% if page.dic.description %}{{ page.dic.description|textile }}{% endif %}
     {% endblock %}
     </div>
