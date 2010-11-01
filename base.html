@@ -27,12 +27,18 @@
 		</a>
 	{% endblock %}
 	</h1>
-	<div id="navigation" class="nav span-24">
-		{% block nav %}
-			{% nav_list nav request.META.PATH_INFO ""%}
-		{% endblock %}
-	</div>
-	<div class="slogan">{{ dic.moto }}</div>
+    <div id="navigation" class="nav span-24">
+        {% block nav %}
+        <ul>
+            {% for i in portfolio.pages_navigation %}
+            <li>
+                <a class="{{ i.slug_name }} n_{{ forloop.counter }}{% ifequal page i %} active{% endifequal %}{% if forloop.first %} first{% endif %}"
+                   href="{{ i.url }}">{{ i.name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endblock %}
+    </div>
+    <div class="slogan">{{ dic.moto }}</div>
 	<div id="content" class="span-24">
 		{% block content %}
 			<div id="main" class="span-10">
